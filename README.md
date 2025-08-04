@@ -1,9 +1,18 @@
-## Bank Feed Account Expiry Remainder Flow
+## Bank Feed Account Expiry Reminder Flow
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expry-remainder&ref=main">
+Production
+<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expry-reminder&ref=main">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
+
+
+Sandbox
+<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expry-reminder&ref=main">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
+
 
 A simple scheduled flow template that sends emails when a bank feed account has expired or soon to be expiring. Soon to be expiring means that there is less than two weeks left in authorization.
 
