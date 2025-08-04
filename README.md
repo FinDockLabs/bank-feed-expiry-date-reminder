@@ -14,18 +14,18 @@ Sandbox
 </a>
 
 
-A simple scheduled flow template that sends emails when a bank feed account has expired or soon to be expiring. Soon to be expiring means that there is less than two weeks left in authorization.
+A simple scheduled Flow template that sends emails when a Bank Feed account authorization is expiring soon (within two weeks) or has expired, meaning no transactions can be imported.
 
 
 ## Requirements
 
-- Bank Feed needs to be activated to use this flow.
-- This flow uses Support & product contact emails that can be set from FinDock Setup's Contact page. If do not want to use this, please set email receiver by hand.
+- The optional Bank Feed feature needs to be activated to use this flow.
+- By default, the flow uses the Support & product contact email(s) defined in the FinDock Setup on the Contact settings page. You an override this by manually defining email receiver(s) in the flow configuration.
 
 
 ## Installation
 
-Simply install and activate the flow (Scheduled Flow - Bank Feed Accounts Expiration Date Reminder). You can then set a start date and frequency and activate it on flow page from Salesforce setup. (Before activation be sure to have updated Notification Contacts from FinDock setup or set a email receiver by hand from this flow)
+Simply install and activate the flow (Scheduled Flow - Bank Feed Accounts Expiration Date Reminder). The flow includes Start Date and Frequency options.  Before activating the flow, be sure to the Contacts settings are correct in FinDock Setup and/or manually define email receiver(s) in the flow. Then, activate the flow as normal from the Flow page in Salesforce Setup.
 
 To deploy the flow to your Salesforce environment, you can:
 - use `sfdx`.
