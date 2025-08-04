@@ -1,0 +1,36 @@
+## Bank Feed Account Expiry Remainder Flow
+
+<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expry-remainder&ref=main">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
+
+A simple scheduled flow template that sends emails when a bank feed account has expired or soon to be expiring. Soon to be expiring means that there is less than two weeks left in authorization.
+
+
+## Requirements
+
+- Bank Feed needs to be activated to use this flow.
+- This flow uses Support & product contact emails that can be set from FinDock Setup's Contact page. If do not want to use this, please set email receiver by hand.
+
+
+## Installation
+
+Simply install and activate the flow (Scheduled Flow - Bank Feed Accounts Expiration Date Reminder). You can then set a start date and frequency and activate it on flow page from Salesforce setup. (Before activation be sure to have updated Notification Contacts from FinDock setup or set a email receiver by hand from this flow)
+
+To deploy the flow to your Salesforce environment, you can:
+- use `sfdx`.
+- press the "Deploy to Salesforce" button at the top of this README and then press "Login to Salesforce" in the top right of your screen.
+- any other deployment method you prefer.
+
+## Contributing
+
+When contributing to this repository, please first discuss the change you wish to make via an issue or any other method with FinDock before making a change.
+
+## Support
+
+FinDock Labs is a non-supported group in FinDock that releases applications. Despite the name, assistance for any of these applications is not provided by FinDock Support because they are not officially supported features. For a list of these apps, visit the FinDock Labs account on Github. 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details# bank-feed-expiry-date-reminder
