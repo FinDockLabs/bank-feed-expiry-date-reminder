@@ -125,7 +125,7 @@
             <assignToReference>RelatedBankAccountNames</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>{!RelatedBankAccountNames}{!on_Related_Bank_Accounts.IBAN__c},</stringValue>
+                <stringValue>{!RelatedBankAccountNames}{!on_Related_Bank_Accounts.cpm__IBAN__c},</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -190,7 +190,7 @@
             <assignToReference>BankAccountIds</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Bank_Account_Ids.Bank_Feed_Account__c</elementReference>
+                <elementReference>Bank_Account_Ids.cpm__Bank_Feed_Account__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -206,7 +206,7 @@
             <assignToReference>NotificationContacts</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>{!NotificationContacts}{!foreach_NotificationContacts.Email__c}, </stringValue>
+                <stringValue>{!NotificationContacts}{!foreach_NotificationContacts.cpm__Email__c}, </stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -241,7 +241,7 @@
         <collectionReference>Get_Bank_Authorization_Accounts</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Filter_by_Authorization.Bank_Feed_Authorization__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_by_Authorization.cpm__Bank_Feed_Authorization__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <elementReference>on_Authorizations.Id</elementReference>
@@ -286,14 +286,14 @@
             <name>Expired</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>on_Authorizations.Expiry_Date__c</leftValueReference>
+                <leftValueReference>on_Authorizations.cpm__Expiry_Date__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
                     <elementReference>NOW</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>on_Authorizations.Status__c</leftValueReference>
+                <leftValueReference>on_Authorizations.cpm__Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Expired</stringValue>
@@ -308,14 +308,14 @@
             <name>Expiring_Soon</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>on_Authorizations.Expiry_Date__c</leftValueReference>
+                <leftValueReference>on_Authorizations.cpm__Expiry_Date__c</leftValueReference>
                 <operator>GreaterThan</operator>
                 <rightValue>
                     <elementReference>NOW</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>on_Authorizations.Expiry_Date__c</leftValueReference>
+                <leftValueReference>on_Authorizations.cpm__Expiry_Date__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
                     <elementReference>Next_Two_Weeks</elementReference>
@@ -519,9 +519,9 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Bank_Account__c</object>
+        <object>cpm__Bank_Account__c</object>
         <queriedFields>Id</queriedFields>
-        <queriedFields>IBAN__c</queriedFields>
+        <queriedFields>cpm__IBAN__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -536,18 +536,18 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Bank_Feed_Authorization__c</field>
+            <field>cpm__Bank_Feed_Authorization__c</field>
             <operator>In</operator>
             <value>
                 <elementReference>AuthorizationIds</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Bank_Feed_Authorization_Account__c</object>
+        <object>cpm__Bank_Feed_Authorization_Account__c</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>Name</queriedFields>
-        <queriedFields>Bank_Feed_Authorization__c</queriedFields>
-        <queriedFields>Bank_Feed_Account__c</queriedFields>
+        <queriedFields>cpm__Bank_Feed_Authorization__c</queriedFields>
+        <queriedFields>cpm__Bank_Feed_Account__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -562,17 +562,17 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Expiry_Date__c</field>
+            <field>cpm__Expiry_Date__c</field>
             <operator>LessThan</operator>
             <value>
                 <elementReference>Next_Two_Weeks</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Bank_Feed_Authorization__c</object>
+        <object>cpm__Bank_Feed_Authorization__c</object>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Expiry_Date__c</queriedFields>
-        <queriedFields>Status__c</queriedFields>
+        <queriedFields>cpm__Expiry_Date__c</queriedFields>
+        <queriedFields>cpm__Status__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -587,23 +587,23 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Type__c</field>
+            <field>cpm__Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Product</stringValue>
             </value>
         </filters>
         <filters>
-            <field>isActive__c</field>
+            <field>cpm__isActive__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Notification_Contacts__c</object>
+        <object>cpm__Notification_Contacts__c</object>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Email__c</queriedFields>
+        <queriedFields>cpm__Email__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
@@ -651,7 +651,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Bank_Feed_Authorization_Account__c</objectType>
+        <objectType>cpm__Bank_Feed_Authorization_Account__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_by_Authorization</name>
@@ -659,7 +659,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Bank_Feed_Authorization_Account__c</objectType>
+        <objectType>cpm__Bank_Feed_Authorization_Account__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Related_Bank_Accounts</name>
@@ -667,7 +667,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Bank_Account__c</objectType>
+        <objectType>cpm__Bank_Account__c</objectType>
     </variables>
     <variables>
         <name>currentItemFromSourceCollection</name>
@@ -675,7 +675,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Bank_Feed_Authorization_Account__c</objectType>
+        <objectType>cpm__Bank_Feed_Authorization_Account__c</objectType>
     </variables>
     <variables>
         <name>NotificationContacts</name>
@@ -693,7 +693,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Bank_Account__c</objectType>
+        <objectType>cpm__Bank_Account__c</objectType>
     </variables>
     <variables>
         <description>Related bank acocunt names concanated with comma</description>
