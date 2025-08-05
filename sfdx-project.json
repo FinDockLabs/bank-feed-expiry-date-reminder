@@ -1,6 +1,6 @@
 {
     "packageDirectories": [
-      { "path": "sfdx-source", "default": true }
+      { "path": "force-app", "default": true }
     ],
     "name": "FinDock-Bank-Feed-Expiry-Date-Reminder",
     "namespace": "",
