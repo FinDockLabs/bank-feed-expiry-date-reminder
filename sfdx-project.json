@@ -1,0 +1,9 @@
+{
+    "packageDirectories": [
+      { "path": "sfdx-source", "default": true }
+    ],
+    "name": "FinDock-Bank-Feed-Expiry-Date-Reminder",
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "64.0"
+  }

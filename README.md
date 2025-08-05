@@ -1,14 +1,14 @@
 ## Bank Feed Account Expiry Reminder Flow
 
-Production
-<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expry-reminder&ref=main">
+Production </br>
+<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expiry-reminder&ref=main">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
 
 
-Sandbox
-<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expry-reminder&ref=main">
+Sandbox </br>
+<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=bank-feed-expiry-reminder&ref=main">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
