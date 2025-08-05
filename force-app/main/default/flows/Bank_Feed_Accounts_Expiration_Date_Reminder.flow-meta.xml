@@ -265,7 +265,7 @@
             <leftValueReference>currentItem_Related_Bank_Accounts.Id</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>on_Related_Bank_Authorization_Accounts.Bank_Feed_Account__c</elementReference>
+                <elementReference>on_Related_Bank_Authorization_Accounts.cpm__Bank_Feed_Account__c</elementReference>
             </rightValue>
         </conditions>
         <connector>
