@@ -501,9 +501,9 @@
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
-    <interviewLabel>Bank Feed Accounts Expiration Date Remainder {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>Bank Feed Accounts Expiration Date Reminder {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
-    <label>Bank Feed Accounts Expiration Date Remainder</label>
+    <label>Bank Feed Accounts Expiration Date Reminder</label>
     <loops>
         <name>foreach_NotificationContacts</name>
         <label>on NotificationContacts</label>
