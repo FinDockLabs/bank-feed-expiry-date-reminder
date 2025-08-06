@@ -7,9 +7,6 @@
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
-        <connector>
-            <targetReference>Clean_bank_accounts</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>emailAddresses</name>
@@ -41,7 +38,7 @@
         <inputParameters>
             <name>emailBody</name>
             <value>
-                <stringValue>&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Dear Bank Feed Customer,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;The authorization for bank account(s) &lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!RelatedBankAccountNames}&lt;/span&gt;  is expiring soon. If you want to continue to use this bank account, please &lt;a href=&quot;https://docs.findock.com/reconciliation/findock-bank-feed#reauthorizing-a-connected-account&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(24, 104, 219);&quot;&gt;reauthorize the connection&lt;/a&gt; to ensure FinDock can continue to import transactions with interruption.&lt;/p&gt;&lt;p&gt;Regards,&lt;/p&gt;&lt;p&gt;The FinDock Team&lt;/p&gt;</stringValue>
+                <stringValue>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(41, 42, 46);&quot;&gt;Dear Bank Feed Customer,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;The authorization for bank account(s) {!FormattedExpiringSoonBankAccountNames}  is expiring soon. If you want to continue to use this bank account, please &lt;a href=&quot;https://docs.findock.com/reconciliation/findock-bank-feed#reauthorizing-a-connected-account&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(24, 104, 219);&quot;&gt;reauthorize the connection&lt;/a&gt; to ensure FinDock can continue to import transactions with interruption.&lt;/p&gt;&lt;p&gt;Regards,&lt;/p&gt;&lt;p&gt;The FinDock Team&lt;/p&gt;</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -65,7 +62,7 @@
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Clean_bank_accounts</targetReference>
+            <targetReference>Expiration_Status</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -98,7 +95,7 @@
         <inputParameters>
             <name>emailBody</name>
             <value>
-                <stringValue>&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Dear Bank Feed Customer,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;The authorization for bank account(s) &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!RelatedBankAccountNames} &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;has expired. FinDock cannot import transaction from the account until the connection is reauthorized. If you want to continue to use this bank account, please &lt;/span&gt;&lt;a href=&quot;https://docs.findock.com/reconciliation/findock-bank-feed#reauthorizing-a-connected-account&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;background-color: rgb(255, 255, 255); color: rgb(24, 104, 219); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;reauthorize the connection&lt;/a&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Regards,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;The FinDock Team&lt;/span&gt;&lt;/p&gt;</stringValue>
+                <stringValue>&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Dear Bank Feed Customer,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;The authorization for bank account(s) &lt;/span&gt;{!FormattedExpiredBankAccountNames} &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;has expired. FinDock cannot import transaction from the account until the connection is reauthorized. If you want to continue to use this bank account, please &lt;/span&gt;&lt;a href=&quot;https://docs.findock.com/reconciliation/findock-bank-feed#reauthorizing-a-connected-account&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;background-color: rgb(255, 255, 255); color: rgb(24, 104, 219); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;reauthorize the connection&lt;/a&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Regards,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(41, 42, 46); font-family: &amp;quot;Atlassian Sans&amp;quot;, ui-sans-serif, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Ubuntu, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;The FinDock Team&lt;/span&gt;&lt;/p&gt;</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -117,51 +114,27 @@
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Bank_Account_Names</name>
-        <label>set Bank Account Names</label>
+        <description>Add Authorization to Current Authorizations Set</description>
+        <name>add_to_Current_Authorizations</name>
+        <label>add to Current Authorizations</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>RelatedBankAccountNames</assignToReference>
-            <operator>Assign</operator>
+            <assignToReference>CurrentAuthorizationIds</assignToReference>
+            <operator>Add</operator>
             <value>
-                <stringValue>{!RelatedBankAccountNames}{!on_Related_Bank_Accounts.cpm__IBAN__c},</stringValue>
+                <elementReference>on_All_Bank_Account_Authorizations.Bank_Feed_Authorization__c</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>on_Related_Bank_Accounts</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Clean_bank_accounts</name>
-        <label>Clean bank account names</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>RelatedBankAccountNames</assignToReference>
-            <operator>Assign</operator>
+            <assignToReference>CurrentBankAccountIds</assignToReference>
+            <operator>Add</operator>
             <value>
-                <stringValue></stringValue>
+                <elementReference>on_All_Bank_Account_Authorizations.Bank_Feed_Account__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>on_Authorizations</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Format_Bank_Account_Names</name>
-        <label>Format Bank Account Names</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>RelatedBankAccountNames</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>FormattedRelatedBankAccountNames</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Expiration_Status</targetReference>
+            <targetReference>on_All_Bank_Account_Authorizations</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -182,22 +155,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Set_Bank_Account_Ids</name>
-        <label>Set Bank Account Ids</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>BankAccountIds</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Bank_Account_Ids.cpm__Bank_Feed_Account__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Bank_Account_Ids</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Set_email_adresses</name>
         <label>Set email adresses</label>
         <locationX>0</locationX>
@@ -206,11 +163,43 @@
             <assignToReference>NotificationContacts</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>{!NotificationContacts}{!foreach_NotificationContacts.cpm__Email__c}, </stringValue>
+                <stringValue>{!NotificationContacts}{!foreach_NotificationContacts.Email__c}, </stringValue>
             </value>
         </assignmentItems>
         <connector>
             <targetReference>foreach_NotificationContacts</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>set_Expired_Bank_Account_Names</name>
+        <label>set Expired Bank Account Names</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ExpiredBankAccountNames</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!ExpiredBankAccountNames}{!on_Related_Bank_Accounts.IBAN__c},</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>on_Related_Bank_Accounts</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>set_Expiring_Soon_Bank_Account_Names</name>
+        <label>set Expiring Soon Bank Account Names</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ExpiringSoonBankAccountNames</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!ExpiringSoonBankAccountNames}{!on_Related_Bank_Accounts.IBAN__c},</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>on_Related_Bank_Accounts</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -241,7 +230,7 @@
         <collectionReference>Get_Bank_Authorization_Accounts</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Filter_by_Authorization.cpm__Bank_Feed_Authorization__c</leftValueReference>
+            <leftValueReference>currentItem_Filter_by_Authorization.Bank_Feed_Authorization__c</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
                 <elementReference>on_Authorizations.Id</elementReference>
@@ -265,7 +254,7 @@
             <leftValueReference>currentItem_Related_Bank_Accounts.Id</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>on_Related_Bank_Authorization_Accounts.cpm__Bank_Feed_Account__c</elementReference>
+                <elementReference>on_Related_Bank_Authorization_Accounts.Bank_Feed_Account__c</elementReference>
             </rightValue>
         </conditions>
         <connector>
@@ -273,56 +262,168 @@
         </connector>
     </collectionProcessors>
     <decisions>
-        <description>Is expired or expiring soon?</description>
+        <description>Is expiring soon bank accounts exists?</description>
         <name>Expiration_Status</name>
-        <label>Expiration Status</label>
+        <label>is Expiring Soon Bank Accounts Exists</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Expiring_Soon_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ExpiringSoonBankAccountNames</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Expiring_soon_email</targetReference>
+            </connector>
+            <label>Expiring Soon Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>is_Current_Authorization</name>
+        <label>is Current Authorization or first item?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Clean_bank_accounts</targetReference>
+            <targetReference>on_All_Bank_Account_Authorizations</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Continue</defaultConnectorLabel>
+        <rules>
+            <name>Individual_bank_acount</name>
+            <conditionLogic>(NOT 1) OR 2</conditionLogic>
+            <conditions>
+                <leftValueReference>CurrentBankAccountIds</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>on_All_Bank_Account_Authorizations.Bank_Feed_Account__r.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CurrentBankAccountIds</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>add_to_Current_Authorizations</targetReference>
+            </connector>
+            <label>Individual bank acount</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>is_Current_Authorization2</name>
+        <label>is Current Authorization</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>on_Authorizations</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Old authorization</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CurrentAuthorizationIds</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>on_Authorizations.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Filter_by_Authorization</targetReference>
+            </connector>
+            <label>Current Authorization</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>is_Expired_Bank_Accounts_Exist</name>
+        <label>is Expired Bank Accounts Exist</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Expiration_Status</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Expired</name>
+            <name>Yes_expired_bank_accounts_exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ExpiredBankAccountNames</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_expired_email</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if this bank account has already expired or expiring soon?</description>
+        <name>Is_Expired_or_Expiring</name>
+        <label>Is Expired or Expiring?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>on_Related_Bank_Accounts</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Expired_Bank_account</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>on_Authorizations.cpm__Expiry_Date__c</leftValueReference>
+                <leftValueReference>on_Authorizations.Expiry_Date__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
                     <elementReference>NOW</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>on_Authorizations.cpm__Status__c</leftValueReference>
+                <leftValueReference>on_Authorizations.Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Expired</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Send_expired_email</targetReference>
+                <targetReference>set_Expired_Bank_Account_Names</targetReference>
             </connector>
             <label>Expired</label>
         </rules>
         <rules>
-            <name>Expiring_Soon</name>
+            <name>Expiring_Soon_bank_account</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>on_Authorizations.cpm__Expiry_Date__c</leftValueReference>
+                <leftValueReference>on_Authorizations.Expiry_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>Next_Two_Weeks</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>on_Authorizations.Expiry_Date__c</leftValueReference>
                 <operator>GreaterThan</operator>
                 <rightValue>
                     <elementReference>NOW</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>on_Authorizations.cpm__Expiry_Date__c</leftValueReference>
-                <operator>LessThan</operator>
+                <leftValueReference>on_Authorizations.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Next_Two_Weeks</elementReference>
+                    <stringValue>Connected</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Expiring_soon_email</targetReference>
+                <targetReference>set_Expiring_Soon_Bank_Account_Names</targetReference>
             </connector>
             <label>Expiring Soon</label>
         </rules>
@@ -366,7 +467,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Bank_Account_Ids</targetReference>
+                <targetReference>Get_Bank_Accounts</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -379,9 +480,14 @@
     </formulas>
     <formulas>
         <description>make it concanated with comma</description>
-        <name>FormattedRelatedBankAccountNames</name>
+        <name>FormattedExpiredBankAccountNames</name>
         <dataType>String</dataType>
-        <expression>LEFT({!RelatedBankAccountNames}, LEN({!RelatedBankAccountNames}) - 2)</expression>
+        <expression>LEFT({!ExpiredBankAccountNames}, LEN({!ExpiredBankAccountNames}) - 2)</expression>
+    </formulas>
+    <formulas>
+        <name>FormattedExpiringSoonBankAccountNames</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!ExpiringSoonBankAccountNames}, LEN({!ExpiringSoonBankAccountNames}) - 2)</expression>
     </formulas>
     <formulas>
         <description>NOW() + 14days</description>
@@ -399,20 +505,6 @@
     <isTemplate>true</isTemplate>
     <label>Bank Feed Accounts Expiration Date Reminder</label>
     <loops>
-        <name>Bank_Account_Ids</name>
-        <label>on Bank Accounts</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <collectionReference>Get_Bank_Authorization_Accounts</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Set_Bank_Account_Ids</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Get_Bank_Accounts</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
         <name>foreach_NotificationContacts</name>
         <label>on NotificationContacts</label>
         <locationX>0</locationX>
@@ -427,6 +519,21 @@
         </noMoreValuesConnector>
     </loops>
     <loops>
+        <description>loop on all Bank Account Authorizations</description>
+        <name>on_All_Bank_Account_Authorizations</name>
+        <label>on All Bank Account Authorizations</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Bank_Authorization_Accounts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>is_Current_Authorization</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Is_there_any_bank_auth_accounts</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
         <description>Loop on Authroziation to get related bank accounts</description>
         <name>on_Authorizations</name>
         <label>on Authorizations</label>
@@ -435,8 +542,11 @@
         <collectionReference>Get_Bank_Feed_Authorization</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Filter_by_Authorization</targetReference>
+            <targetReference>is_Current_Authorization2</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>is_Expired_Bank_Accounts_Exist</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <loops>
         <description>foreach BankFeedAuthorization</description>
@@ -461,7 +571,7 @@
         <collectionReference>Related_Bank_Accounts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Bank_Account_Names</targetReference>
+            <targetReference>Is_Expired_or_Expiring</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>on_Related_Bank_Authorization_Accounts</targetReference>
@@ -478,7 +588,7 @@
             <targetReference>Related_Bank_Accounts</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Format_Bank_Account_Names</targetReference>
+            <targetReference>on_Authorizations</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -515,39 +625,37 @@
             <field>Id</field>
             <operator>In</operator>
             <value>
-                <elementReference>BankAccountIds</elementReference>
+                <elementReference>CurrentBankAccountIds</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>cpm__Bank_Account__c</object>
+        <object>Bank_Account__c</object>
         <queriedFields>Id</queriedFields>
-        <queriedFields>cpm__IBAN__c</queriedFields>
+        <queriedFields>IBAN__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <description>Get bank accounts</description>
+        <description>Get Bank Feed Authorization Account</description>
         <name>Get_Bank_Authorization_Accounts</name>
         <label>Get Bank Authorization Accounts</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Is_there_any_bank_auth_accounts</targetReference>
+            <targetReference>on_All_Bank_Account_Authorizations</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>cpm__Bank_Feed_Authorization__c</field>
+            <field>Bank_Feed_Authorization__c</field>
             <operator>In</operator>
             <value>
                 <elementReference>AuthorizationIds</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>cpm__Bank_Feed_Authorization_Account__c</object>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Name</queriedFields>
-        <queriedFields>cpm__Bank_Feed_Authorization__c</queriedFields>
-        <queriedFields>cpm__Bank_Feed_Account__c</queriedFields>
+        <object>Bank_Feed_Authorization_Account__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -560,19 +668,28 @@
         <connector>
             <targetReference>Is_there_any</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>or</filterLogic>
         <filters>
-            <field>cpm__Expiry_Date__c</field>
-            <operator>LessThan</operator>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
             <value>
-                <elementReference>Next_Two_Weeks</elementReference>
+                <stringValue>Connected</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Expired</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>cpm__Bank_Feed_Authorization__c</object>
+        <object>Bank_Feed_Authorization__c</object>
         <queriedFields>Id</queriedFields>
-        <queriedFields>cpm__Expiry_Date__c</queriedFields>
-        <queriedFields>cpm__Status__c</queriedFields>
+        <queriedFields>Expiry_Date__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <sortField>Expiry_Date__c</sortField>
+        <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -587,23 +704,23 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>cpm__Type__c</field>
+            <field>Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Product</stringValue>
             </value>
         </filters>
         <filters>
-            <field>cpm__isActive__c</field>
+            <field>isActive__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>cpm__Notification_Contacts__c</object>
+        <object>Notification_Contacts__c</object>
         <queriedFields>Id</queriedFields>
-        <queriedFields>cpm__Email__c</queriedFields>
+        <queriedFields>Email__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
@@ -646,12 +763,35 @@
         </value>
     </variables>
     <variables>
+        <name>CurrentAuthorizationIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Current Bank Account Id Set</description>
+        <name>CurrentBankAccountIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>currentItem_Collection_Filter_3</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Bank_Feed_Authorization__c</objectType>
+    </variables>
+    <variables>
         <name>currentItem_Filter_Bank_Accounts_by_BankAccountAuthorizations</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>cpm__Bank_Feed_Authorization_Account__c</objectType>
+        <objectType>Bank_Feed_Authorization_Account__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Filter_by_Authorization</name>
@@ -659,7 +799,23 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>cpm__Bank_Feed_Authorization_Account__c</objectType>
+        <objectType>Bank_Feed_Authorization_Account__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Find_Current_Authorizations</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Bank_Feed_Authorization__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_get_Current_Authorizations</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Bank_Feed_Authorization__c</objectType>
     </variables>
     <variables>
         <name>currentItem_Related_Bank_Accounts</name>
@@ -667,7 +823,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>cpm__Bank_Account__c</objectType>
+        <objectType>Bank_Account__c</objectType>
     </variables>
     <variables>
         <name>currentItemFromSourceCollection</name>
@@ -675,7 +831,28 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>cpm__Bank_Feed_Authorization_Account__c</objectType>
+        <objectType>Bank_Feed_Authorization_Account__c</objectType>
+    </variables>
+    <variables>
+        <description>Related bank acocunt names concanated with comma</description>
+        <name>ExpiredBankAccountNames</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ExpiringSoonBankAccountNames</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
     </variables>
     <variables>
         <name>NotificationContacts</name>
@@ -693,17 +870,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>cpm__Bank_Account__c</objectType>
-    </variables>
-    <variables>
-        <description>Related bank acocunt names concanated with comma</description>
-        <name>RelatedBankAccountNames</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <stringValue></stringValue>
-        </value>
+        <objectType>Bank_Account__c</objectType>
     </variables>
 </Flow>
