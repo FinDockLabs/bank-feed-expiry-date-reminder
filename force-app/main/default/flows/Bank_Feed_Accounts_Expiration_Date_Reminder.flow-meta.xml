@@ -179,7 +179,7 @@
             <assignToReference>ExpiredBankAccountNames</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>{!ExpiredBankAccountNames}{!on_Related_Bank_Accounts.cpm__IBAN__c},</stringValue>
+                <stringValue>{!ExpiredBankAccountNames}{!on_Related_Bank_Accounts.cpm__IBAN__c} and </stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -195,7 +195,7 @@
             <assignToReference>ExpiringSoonBankAccountNames</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>{!ExpiringSoonBankAccountNames}{!on_Related_Bank_Accounts.cpm__IBAN__c},</stringValue>
+                <stringValue>{!ExpiringSoonBankAccountNames}{!on_Related_Bank_Accounts.cpm__IBAN__c} and </stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -482,12 +482,12 @@
         <description>make it concanated with comma</description>
         <name>FormattedExpiredBankAccountNames</name>
         <dataType>String</dataType>
-        <expression>LEFT({!ExpiredBankAccountNames}, LEN({!ExpiredBankAccountNames}) - 2)</expression>
+        <expression>LEFT({!ExpiredBankAccountNames}, LEN({!ExpiredBankAccountNames}) - 6)</expression>
     </formulas>
     <formulas>
         <name>FormattedExpiringSoonBankAccountNames</name>
         <dataType>String</dataType>
-        <expression>LEFT({!ExpiringSoonBankAccountNames}, LEN({!ExpiringSoonBankAccountNames}) - 2)</expression>
+        <expression>LEFT({!ExpiringSoonBankAccountNames}, LEN({!ExpiringSoonBankAccountNames}) - 6)</expression>
     </formulas>
     <formulas>
         <description>NOW() + 14days</description>
